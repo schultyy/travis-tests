@@ -1,7 +1,5 @@
 services:
   - docker
-language: python
-python: "3.6"
 env:
   global:
   - CONAN_UPLOAD=1
@@ -17,6 +15,8 @@ matrix:
   include:
   - os: linux
     sudo: required
+    language: python
+    python: "3.6"
   - os: osx
     osx_image: xcode8.2
     language: generic
