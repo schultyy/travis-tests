@@ -22,4 +22,4 @@ matrix:
     language: generic
     env:
 install: true
-script: true
+script: echo "Hallo"
