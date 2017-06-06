@@ -2,7 +2,8 @@ python-shared: &python-shared
   os: linux
   sudo: required
   language: python
-  services: docker
+  services: 
+    - docker
 
 env:
   global:
@@ -19,12 +20,8 @@ matrix:
   include:
   - python: "3.6"
     <<: *python-shared
-    services:
-      - docker
   - python: "3.5"
     <<: *python-shared
-    services:
-      - docker
   - os: osx
     osx_image: xcode8.2
     language: generic
