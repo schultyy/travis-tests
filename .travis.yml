@@ -1,30 +1,5 @@
-python-shared: &python-shared
-  os: linux
-  sudo: required
-  language: python
-  services: 
-    - docker
-
-env:
-  global:
-  - CONAN_UPLOAD=1
-  - CONAN_REFERENCE="OpenSC/next"
-  - CONAN_USERNAME="nunojpg"
-  - CONAN_CHANNEL="ci"
-  - CONAN_STABLE_BRANCH_PATTERN="release/*"
-  - CONAN_TOTAL_PAGES=1
-  - CONAN_CURRENT_PAGE=1
-  matrix:
-  - CONAN_GCC_VERSIONS=5.3 CONAN_USE_DOCKER=1
-matrix:
-  include:
-  - python: "3.6"
-    <<: *python-shared
-  - python: "3.5"
-    <<: *python-shared
-  - os: osx
-    osx_image: xcode8.2
-    language: generic
-    env:
-install: true
+dist: trusty
+sudo: required
+before_install:
+  - sudo apt-get install libgmp-dev:i386
 script: true
