@@ -17,12 +17,12 @@ env:
   - CONAN_GCC_VERSIONS=5.3 CONAN_USE_DOCKER=1
 matrix:
   include:
-  - <<: *python-shared
-    python: "3.6
+  - python: "3.6
+    <<: *python-shared
     services:
       - docker
-  - <<: *python-shared
-    python: 3.5
+  - python: 3.5
+    <<: *python-shared
     services:
       - docker
   - os: osx
