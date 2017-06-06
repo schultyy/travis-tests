@@ -1,3 +1,9 @@
+python-shared: &python-shared
+  os: linux
+  sudo: required
+  language: python
+  services: docker
+
 env:
   global:
   - CONAN_UPLOAD=1
@@ -11,10 +17,12 @@ env:
   - CONAN_GCC_VERSIONS=5.3 CONAN_USE_DOCKER=1
 matrix:
   include:
-  - os: linux
-    sudo: required
-    language: python
-    python: "3.6"
+  - <<: *python-shared
+    python: "3.6
+    services:
+      - docker
+  - <<: *python-shared
+    python: 3.5
     services:
       - docker
   - os: osx
@@ -22,4 +30,4 @@ matrix:
     language: generic
     env:
 install: true
-script: echo "Hallo"
+script: true
