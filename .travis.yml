@@ -8,3 +8,4 @@ language: ruby
 rvm: "2.4.1"
 script:
   - echo $PATH
+  - which google-chrome-stable
