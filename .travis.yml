@@ -1,11 +1,6 @@
-dist: trusty
-#addons:
-#  chrome: stable
-before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-language: ruby
-rvm: "2.4.1"
-script:
-  - echo $PATH
-  - which google-chrome-stable
+language: node
+before_script:
+  - "free -m"
+after_script:
+  - "free -m"
+script: true
