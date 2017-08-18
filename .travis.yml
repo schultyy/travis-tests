@@ -5,7 +5,7 @@ before_deploy:
   - gem install --no-rdoc --no-ri fpm
   - gem which fpm
   - echo $PATH
-  - echo rvm versions
+  - rvm list rubies
   - which -a fpm
 deploy:
   provider: script
