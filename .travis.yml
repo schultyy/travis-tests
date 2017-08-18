@@ -7,7 +7,7 @@ before_deploy:
   - which -a fpm
 deploy:
   provider: script
-  script: bash -c 'echo $PATH && ls -lha /home/travis/.rvm/gems/ruby-1.9.3-p551/bin/ && which -a fpm'
+  script: bash -c 'fpm --version'
 skip_cleanup: true
 on:
   all_branches: true
