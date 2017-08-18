@@ -1,6 +1,13 @@
-language: node
-before_script:
-  - "free -m"
-after_script:
-  - "free -m"
+language: ruby
 script: true
+before_deploy:
+  - gem install --no-rdoc --no-ri fpm
+  - gem which fpm
+  - echo $PATH
+  - which -a fpm
+deploy:
+  provider: script
+  script: bash -c 'echo $PATH && ls -lha /home/travis/.rvm/gems/ruby-1.9.3-p551/bin/ && which -a fpm'
+skip_cleanup: true
+on:
+  all_branches: true
