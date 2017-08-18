@@ -1,4 +1,5 @@
 language: ruby
+dist: precise
 script: true
 before_deploy:
   - gem install --no-rdoc --no-ri fpm
