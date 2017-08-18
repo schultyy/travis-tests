@@ -7,7 +7,7 @@ before_deploy:
   - which -a fpm
 deploy:
   provider: script
-  script: bash -c 'fpm --version'
+  script: fpm --version
 skip_cleanup: true
 on:
   all_branches: true
