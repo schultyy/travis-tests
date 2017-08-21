@@ -1,15 +1,3 @@
 language: ruby
 dist: precise
 script: true
-before_deploy:
-  - gem install --no-rdoc --no-ri fpm
-  - gem which fpm
-  - echo $PATH
-  - rvm list rubies
-  - which -a fpm
-deploy:
-  provider: script
-  script: rvm $TRAVIS_RUBY_VERSION do bash -c 'echo $PATH && which -a fpm'
-skip_cleanup: true
-on:
-  all_branches: true
