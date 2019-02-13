@@ -1,1 +1,2 @@
-language: windows
+os: windows
+language: c
